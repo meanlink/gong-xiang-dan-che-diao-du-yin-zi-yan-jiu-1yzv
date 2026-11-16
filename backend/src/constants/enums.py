@@ -3,8 +3,27 @@ class Role(str, Enum):
     admin = 'admin'
     analyst = 'analyst'
     viewer = 'viewer'
+    reviewer = 'reviewer'
+    adjudicator = 'adjudicator'
 class JobStatus(str, Enum):
     queued = 'queued'
     running = 'running'
     completed = 'completed'
     failed = 'failed'
+class ReviewStatus(str, Enum):
+    open = 'open'
+    closed = 'closed'
+class ReviewItemStatus(str, Enum):
+    open = 'open'
+    disputed = 'disputed'
+    resolved = 'resolved'
+class AssignmentKind(str, Enum):
+    review = 'review'
+    adjudication = 'adjudication'
+class AssignmentStatus(str, Enum):
+    open = 'open'
+    submitted = 'submitted'
+    revoked = 'revoked'
+class Decision(str, Enum):
+    keep = 'keep'
+    remove = 'remove'

@@ -17,3 +17,9 @@ def can_write(user=Depends(current_user)):
 def admin_only(user=Depends(current_user)):
     if user.role != 'admin': raise HTTPException(403, '需要业务负责人批准')
     return user
+def reviewer_only(user=Depends(current_user)):
+    if user.role != 'reviewer': raise HTTPException(403, '仅复核员可以领取复核任务')
+    return user
+def adjudicator_only(user=Depends(current_user)):
+    if user.role != 'adjudicator': raise HTTPException(403, '仅裁决员可以领取裁决任务')
+    return user
